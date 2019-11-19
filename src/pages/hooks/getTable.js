@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-function GetTable(){
+function GetTable(props){
     const [name,setName] = useState('tanqq');
     useEffect(()=>{
         setName("tqq");
@@ -7,6 +7,7 @@ function GetTable(){
 
     return (
         <div>
+            <input onChange={(e)=>{props.onchangeCount(e.target.value)}} />
             <table>
                 <thead>
                     <tr>
