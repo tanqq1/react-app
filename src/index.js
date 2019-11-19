@@ -54,7 +54,7 @@ function Board(props){
         {renderSquare(7)}
         {renderSquare(8)}
         </div>
-        <HooksExample title={props.title} />
+        <HooksExample title="kakka" />
     </div>
     );
   }
