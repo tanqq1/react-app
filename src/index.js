@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import HooksExample from './pages/hooks/index';
+import Dialog from './pages/others/propsChild';
 
 function Square(props){
       return (
@@ -123,6 +124,7 @@ function Board(props){
                         <ol>{moves}</ol>
                     </div>
                 </div>
+                <Dialog />
             </div>
         );
     }
