@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import HooksExample from './pages/hooks/index';
 import Dialog from './pages/others/propsChild';
+import ContextReact from './pages/others/contextReact';
 
 function Square(props){
       return (
@@ -125,6 +126,7 @@ function Board(props){
                     </div>
                 </div>
                 <Dialog />
+                <ContextReact />
             </div>
         );
     }
