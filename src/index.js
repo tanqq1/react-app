@@ -56,7 +56,6 @@ function Board(props){
         {renderSquare(7)}
         {renderSquare(8)}
         </div>
-        <HooksExample title="kakka" />
     </div>
     );
   }
@@ -125,7 +124,11 @@ function Board(props){
                         <ol>{moves}</ol>
                     </div>
                 </div>
+                <h1>Hooks的使用>>>></h1>
+                <HooksExample title="kakka" />
+                <h1>组合和继承>>>></h1>
                 <Dialog />
+                <h1>Context的使用>>>></h1>
                 <ContextReact />
             </div>
         );

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {ThemeContext} from './themeContext';
 
 export default class Pages1 extends Component {
     constructor(props){
@@ -8,11 +9,16 @@ export default class Pages1 extends Component {
         }
     }
     render(){
-        console.log("this.context。。。。",this.context)
         return (
-            <div>
-                aaa
-            </div>
+            <ThemeContext.Consumer>
+                {(context)=>{
+                    return (
+                        <h2 style={{backgroundColor:context.backgroundColor,color:context.color}}>
+                            this is a little success,{context.backgroundColor}
+                        </h2>
+                      )
+                }}
+            </ThemeContext.Consumer>
         )
     }
 }
