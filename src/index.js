@@ -69,7 +69,9 @@ function Board(props){
             ],
             stepNumber:0,
             XISNext: true,
+            hooksInputValue:''
         }
+        this.getInputValue = this.getInputValue.bind(this);
     }
 
     handleClick = (index) => { 
@@ -95,6 +97,14 @@ function Board(props){
             XISNext: step % 2 === 0,
             title:step,
         })
+    }
+
+    getInputValue(value){
+        console.log("ref......",this.hooksTest)
+        console.log("this.dialogs......",this.dialogs)
+        this.setState({
+            hooksInputValue: value
+        });
     }
 
     render() {
@@ -124,10 +134,17 @@ function Board(props){
                         <ol>{moves}</ol>
                     </div>
                 </div>
-                <h1>Hooks的使用>>>></h1>
-                <HooksExample title="kakka" />
+                <div>
+                    <span className="gradient-h1">Hooks的使用>>>></span>
+                </div>
+                <input value={this.state.hooksInputValue} />
+                <HooksExample 
+                    title="输入信息：" 
+                    getInputValue={this.getInputValue} 
+                    // ref={el => this.hooksTest = el}
+                />
                 <h1>组合和继承>>>></h1>
-                <Dialog />
+                <Dialog ref={el => this.dialogs = el} />
                 <h1>Context的使用>>>></h1>
                 <ContextReact />
             </div>

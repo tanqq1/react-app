@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import GetTable from './getTable';
-import UseIsOdd from './useIsOdd';
+import '../../index.css';
 
 function HookExample(props){
     const [count,setCount] = useState(0);
@@ -34,14 +34,12 @@ function HookExample(props){
     
     useEffect(getName,[])
     useEffect(() => getName(),[])
-    const isOddTimes = UseIsOdd(count);
-
     return (
         <div>
             <p>you clicked { count } 次</p>
-            <h1>{props.title}</h1>
+            <span className="hooksTitle">{props.title}</span>
+            <input onChange={e => {props.getInputValue(e.target.value)}} />
             <button onClick={()=>setCount(count + 1)}>add one</button>
-            <h1>单击了{isOddTimes ? '奇' : '偶'}数次</h1>
             <div id="test">
                 <button style={{color:'red',backgroundColor:'#999999', margin:10}} onClick={removeTableNode}>clear</button>
                 <button style={{backgroundColor:'#1890ff', margin:10}} onClick={insertTableNode}>add</button>

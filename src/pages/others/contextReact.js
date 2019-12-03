@@ -39,7 +39,6 @@ function Page2(props){
 class Pages3 extends Component{
     static contextType = ThemeContext;
     render(){
-        console.log("this.context",this.context)
         return (
         <div style={{...this.context}}>{this.context.color}</div>
         )
