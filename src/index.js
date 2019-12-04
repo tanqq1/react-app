@@ -4,6 +4,7 @@ import './index.css';
 import HooksExample from './pages/hooks/index';
 import Dialog from './pages/others/propsChild';
 import ContextReact from './pages/others/contextReact';
+import RefsContainer from './pages/refs/refsContainer';
 
 function Square(props){
       return (
@@ -72,6 +73,7 @@ function Board(props){
             hooksInputValue:''
         }
         this.getInputValue = this.getInputValue.bind(this);
+        this.funsRef = React.createRef();
     }
 
     handleClick = (index) => { 
@@ -123,6 +125,7 @@ function Board(props){
                 <button onClick={() =>this.jumpTo(move)}>{desc}</button>
             </li>
         })
+        console.log("reftest。。。。。",this.refTest);
         return (
             <div>
                 <div className="game">
@@ -134,19 +137,26 @@ function Board(props){
                         <ol>{moves}</ol>
                     </div>
                 </div>
-                <div>
-                    <span className="gradient-h1">Hooks的使用>>>></span>
+                <div className="title-div">
+                    <span className="gradient-h1">1、hooks的使用</span>
                 </div>
-                <input value={this.state.hooksInputValue} />
+                <p className="gradient-mask" text={this.state.hooksInputValue}>{this.state.hooksInputValue}</p>
                 <HooksExample 
                     title="输入信息：" 
                     getInputValue={this.getInputValue} 
-                    // ref={el => this.hooksTest = el}
                 />
-                <h1>组合和继承>>>></h1>
+                <div className="title-div">
+                    <span className="gradient-h1">2、组合和继承</span>
+                </div>
                 <Dialog ref={el => this.dialogs = el} />
-                <h1>Context的使用>>>></h1>
+                <div className="title-div">
+                    <span className="gradient-h1">3、Context的使用</span>
+                </div>
                 <ContextReact />
+                <div className="title-div">
+                    <span className="gradient-h1">4、refs的使用</span>
+                </div>
+                <RefsContainer name={this.state.hooksInputValue}></RefsContainer>
             </div>
         );
     }

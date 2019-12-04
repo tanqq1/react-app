@@ -28,6 +28,10 @@ class Dialog extends Component{
         }
     }
 
+    getTime = () =>{
+        console.log("nannnnnnn.......")
+    }
+
     render(){
         return (
             <WelcomeDialog 

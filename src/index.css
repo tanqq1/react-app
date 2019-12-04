@@ -55,11 +55,31 @@ body {
     color:#8b288b;
     font-size:16px;
   }
+  .title-div{
+    margin:15px;
+  }
+  /* 渐变色的两种实现方式 background-image//mask */
   .gradient-h1{
     background-image: linear-gradient(to right, pink, red, cyan);
     background-clip: text;
     -webkit-background-clip: text;
     color:transparent;
     font-size: 20px;
+    font-weight: bold;
+  }
+  .gradient-mask{
+    position: relative;
+    color: #325bcd;
+  }
+  .gradient-mask::before{
+    content: attr(text);
+    position: absolute;
+    z-index:10;
+    color:pink;
+    mask:linear-gradient(to left, #bc32cd, transparent);
+    -webkit-mask:linear-gradient(to left, #bc32cd, transparent);
   }
   
+  input{
+    display:inline-block;
+  }
