@@ -1,6 +1,7 @@
 body {
     font: 14px "Century Gothic", Futura, sans-serif;
     margin: 20px;
+    --border-width:3px;
   }
   
   ol, ul {
@@ -79,7 +80,30 @@ body {
     mask:linear-gradient(to left, #bc32cd, transparent);
     -webkit-mask:linear-gradient(to left, #bc32cd, transparent);
   }
+
   
   input{
     display:inline-block;
+  }
+
+  .gradient-border{
+    border:3px salmon solid;
+    border-radius: var(--border-width);
+    background:linear-gradient(
+      60deg,
+      hsl(224, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(359, 85%, 66%),
+      hsl(44, 85%, 66%),
+      hsl(89, 85%, 66%),
+      hsl(134, 85%, 66%),
+      hsl(179, 85%, 66%)
+    );
+    /* animation: moveGradient 4s alternate infinite; */
+  }
+  @keyframes moveGradient {
+    50% {
+      background-position: 100% 50%;
+    }
   }

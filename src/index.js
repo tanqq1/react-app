@@ -102,12 +102,15 @@ function Board(props){
     }
 
     getInputValue(value){
-        console.log("ref......",this.hooksTest)
-        console.log("this.dialogs......",this.dialogs)
         this.setState({
-            hooksInputValue: value
+            hooksInputValue: this.delSpaceFormStr(value)
         });
     }
+
+    delSpaceFormStr = (str) => {
+        return str.replace(/\s*/g,"");
+    }
+    
 
     render() {
         const { history, XISNext, stepNumber, title } = this.state;
@@ -125,7 +128,6 @@ function Board(props){
                 <button onClick={() =>this.jumpTo(move)}>{desc}</button>
             </li>
         })
-        console.log("reftest。。。。。",this.refTest);
         return (
             <div>
                 <div className="game">
@@ -157,6 +159,9 @@ function Board(props){
                     <span className="gradient-h1">4、refs的使用</span>
                 </div>
                 <RefsContainer name={this.state.hooksInputValue}></RefsContainer>
+                <div className="title-div">
+                    <span className="gradient-h1">5、高阶组件的生成、使用与理解</span>
+                </div>
             </div>
         );
     }
