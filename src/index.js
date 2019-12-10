@@ -31,6 +31,9 @@ import Game from './pages/game/index';
 
     render() {
         return (
+            <div>hhhhh</div>
+        )
+        return (
             <div>
                 <div className="title-div">
                     <span className="gradient-h1">0、三子棋盘</span>
@@ -67,3 +70,8 @@ import Game from './pages/game/index';
     document.getElementById('root')
   );
   
+
+// function hello(){
+//     console.log("hello");
+// }
+// hello();
