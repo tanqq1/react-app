@@ -1,6 +1,7 @@
 const path = require("path");
-module.export = {
-    'mode':"development",
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+module.exports = {
     entry:"./src/index.js",
     output:{
         filename:"bundle.js",
@@ -9,41 +10,40 @@ module.export = {
     module:{
         rules:[
             {
+                test: /\.js?$/,
+                exclude:/(node_modules|bower_components)/,
+                loader: 'babel-loader',
+                options:{
+                    "presets":[
+                        "@babel/preset-react",
+                        "@babel/preset-env"
+                    ],
+                    "plugins":[
+                        "@babel/proposal-class-properties",
+                        "@babel/syntax-dynamic-import"
+                    ]
+                }
+            },
+            {
                 test:/\.css$/,
                 use:['style-loader','css-loader']
             },
             {
-                test:/\.js$/,
-                loader:['babel?presets[]=es2015,presets[]=react']
+                test: /\.(m4a)$/,
+                loader:'file-loader'
             },
-            // {
-            //     test:/\.js$/,
-            //     use:{
-            //         loader:'babel-loader',
-            //         options: {
-            //             babelrc: false,
-            //             plugins: [
-            //                 "@babel/plugin-proposal-class-properties",
-            //                 "@babel/plugin-syntax-dynamic-import",
-            //                 "lodash",
-            //             ],
-            //         },
-            //         presets: [
-            //             [
-            //                 "babel-preset-env",
-            //                 {
-            //                   "useBuiltIns": "usage",
-            //                   "corejs": 3,
-            //                   "targets": {
-            //                     "chrome": "58",
-            //                     "ie": "11"
-            //                   }
-            //                 }
-            //             ], 
-            //             "babel-preset-react"
-            //         ]
-            //     }
-            // },
+            {
+                test: /\.(png|jpg|gif)$/,
+                loader: 'file-loader'
+            }
         ]
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template :'public/index.html',
+            filename:'./index.html',
+            favicon   : 'public/favicon.ico'
+        }),
+        new CleanWebpackPlugin()
+    ]
 }
