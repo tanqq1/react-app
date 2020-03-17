@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import RefsInClass from './refsInClass';
 import RefsInFunction from './refsInFunction';
 import RefsInHooks from './refsInHooks';
+import '../../index.css';
 
 export default class RefsContainer extends Component{
     constructor(props){
@@ -32,9 +33,9 @@ export default class RefsContainer extends Component{
     render(){
         return (
             <div>
-                <button onClick={this.onPauseAudio}>{this.state.buttonText}</button>
+                <button onClick={this.onPauseAudio} className="gradient-border">{this.state.buttonText}</button>
                 <p>
-                refs提供了一种让我们直接访问DOM元素或在render方法中创建的react元素,
+                    refs提供了一种让我们直接访问DOM元素或在render方法中创建的react元素,
                     对于DOM的访问，更相当于DOM元素的绑定，例如：document.getElemntByID();;
                     对于React的render,ref对象接收的是组件的挂载的实例
                 </p>
