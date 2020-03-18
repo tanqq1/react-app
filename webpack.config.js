@@ -15,8 +15,8 @@ module.exports = {
                 loader: 'babel-loader',
                 options:{
                     "presets":[
-                        "@babel/preset-react",
-                        "@babel/preset-env"
+                        "@babel/react",
+                        "@babel/env"
                     ],
                     "plugins":[
                         "@babel/proposal-class-properties",
@@ -33,16 +33,17 @@ module.exports = {
                 loader:'file-loader'
             },
             {
-                test: /\.(png|jpg|gif)$/,
-                loader: 'file-loader'
+                test: /\.(png|jpg|gif|ico)$/,
+                exclude: /node_modules/,
+                loader: ['file-loader?name=[name].[ext]']
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template :'public/index.html',
-            filename:'./index.html',
-            favicon   : 'public/favicon.ico'
+            template: 'public/index.html',
+            filename: './index.html',
+            favicon: 'public/favicon.ico'
         }),
         new CleanWebpackPlugin()
     ]
