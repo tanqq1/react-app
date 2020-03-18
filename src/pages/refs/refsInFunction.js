@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../index.css';
-import Audio from '../../static/audio2.m4a';
+import Audio from './audio2.m4a';
 
 // 如何在函数组件中使用ref
 // 通过refs来控制录音的播放与暂停

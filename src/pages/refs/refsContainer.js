@@ -12,10 +12,6 @@ export default class RefsContainer extends Component{
         }
     }
 
-    getFunction1 = () => {
-
-    }
-
     onPauseAudio = () => {
         if(this.funsRef.paused){
             this.funsRef.play();

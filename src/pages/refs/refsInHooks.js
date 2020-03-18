@@ -1,7 +1,7 @@
 import React, { useState, useRef, useCallback } from 'react';
 
 // 在hooks中使用refs
-function RefsInHooks(props){
+export default function RefsInHooks(props){
     const [height, setHeight] = useState(0);
     const refHooks = useRef(null); //每次返回的是同一个示例,ref的值发生变化时也不会通知我们
 
@@ -14,6 +14,7 @@ function RefsInHooks(props){
             setHeight(node.getBoundingClientRect().height);
         }
     },[])
+
     return (
         <div>
             <p>hooks里的refs</p>
@@ -25,4 +26,3 @@ function RefsInHooks(props){
     )
 }
 
-export default RefsInHooks;
