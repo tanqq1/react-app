@@ -1,0 +1,144 @@
+h1 {
+    color:green;
+}
+ul li {
+    color:#795da3;
+}
+ol li {
+    color: #df5000;
+}
+h3 {
+    color: #b0e36e;
+}
+.text_break{
+    width: 360px;
+    height: 200px;
+    background-color: pink;
+    border: 2px black solid;
+    overflow: hidden;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+.maiodian {
+    position:fixed;
+    right:10px;
+    top:10px;
+    margin-left: 80px;
+}
+.left{
+    position: absolute;
+}
+.left:before,.left:after{
+position: absolute;
+content: '';
+border-top: 10px transparent dashed;
+border-left: 10px transparent dashed;
+border-bottom: 10px transparent dashed;
+border-right: 10px #fff solid;
+}
+.left:before{
+border-right: 10px #0099CC solid;
+}
+.left:after{
+left: 1px; /*覆盖并错开1px*/
+border-right: 10px #fff solid;
+}
+/* 
+:root {
+    --titleColor: darkGreen;
+    --px20: 20px;
+    --pColor:darkcyan;
+}
+body {
+    background-color: #f7f7f7;
+    margin-bottom: 20px;
+    counter-reset: OuterItemCount 5 InnerItemCount  count;
+}
+h1 {
+    color: var(--titleColor);
+    font-size: var(--px20);
+}
+div {
+    --dColor: blue;
+    --dSize: 18px;
+}
+p{
+    color: var(--pColor);
+    font-size: var(--dSize);
+}
+#divContainer {
+    width: 80%;
+    background-color: #fff7d0;
+    color:#2b2721;
+    font-size: 14px;
+    font-weight: 400;
+    border: 5px solid rosybrown;
+    border-radius: 10px;
+    overflow-x:auto;
+}
+#index{
+    color:coral;
+    font-size:18px;
+}
+#noIndex{
+    color:#999999;
+    font-size:18px;
+}
+/* link -> visited -> hover -> active */
+a:link {
+    text-decoration: none;
+    color:silver
+}
+a:link:active {
+    color: black;
+}
+#outerList > li::before {
+    content: counter(OuterItemCount) '.';
+    counter-increment: OuterItemCount 2;
+}
+#innerList > li::before{
+    content: counter(InnerItemCount, lower-alpha) '.';
+    counter-increment: InnerItemCount;
+}
+
+/* 属性选择器-- 所有属性title的值以en-开头的p元素*/
+p[title^=en]{
+    font-size: 20px;
+}
+/* 通配符选择器--所有title属性以en-开头的元素 */
+*[title^= en]{
+    color:red;
+}
+/* 通配符选择器-ID，就同ID选择器一样 */
+*#index{
+    color:coral;
+}
+
+/* 相邻选择器 */
+p + span {
+    color: #1177aa;
+} 
+
+/* 通用兄弟选择器 */
+p ~ span {
+    color: #337766;
+}
+/* 子选择器 */
+p > span {
+    color: #c3da43;
+    font-size:24px;
+}
+
+p p {
+    color: red
+} */
+
+/* 三角图标的实现 */
+#triggleRight{
+    width:0;
+    height:0;
+    border-width: 10px; 
+    border-color:transparent transparent transparent #008b8b;
+    border-style: solid;
+}
+

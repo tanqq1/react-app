@@ -7,6 +7,20 @@ body {
   ol, ul {
     padding-left: 30px;
   }
+
+  .siderBar {
+    width: 20%;
+    height:100%;
+    float: left;
+    background:rgba(121,121,121,0.3);
+    font-size: 18px;
+    color: white;
+    margin-right: 2em;
+  }
+  .mainPage{
+    width: 75%;
+    float: left;
+  }
   
   .board-row:after {
     clear: both;
