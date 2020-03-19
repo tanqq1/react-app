@@ -9,11 +9,13 @@ import './index.css';
 export default function RouterIndex(){
     return (
         <Router>
-            <div className="siderBar">
-                <SiderBar />
-            </div>
-            <div className="mainPage">
-                <Routes />
+            <div className="container">
+                <div className="siderBar">
+                    <SiderBar />
+                </div>
+                <div className="mainPage">
+                    <Routes />
+                </div>
             </div>
         </Router>
     )
