@@ -10,15 +10,30 @@ import CanvasOfHtml5 from '../pages/html5/canvasOfHtml5';
 import DomOfHtml from '../pages/html5/domOfHtml';
 import CssAndHtml5 from '../pages/html5/cssAndHtml5';
 
-async function getRouteComponent(paramC){
-    console.log("paramC.......",await paramC());
-    return [paramC];
+function getRouteComponent(paramC){
+
+    async function getAsy() {
+        let b = await paramC;
+        console.log("6666666666",b.default, typeof b.default )
+        return b.default;   //function
+
+    }
+    console.log("9999999999999",typeof getAsy())   //Promise
+    function funThen(){
+        return paramC.then(Module => {
+            console.log("111111111",Module.default)
+            return Module.default;   //function
+        })
+    }
+    
+    console.log("33333333", funThen())   //Promise
 }
 
 const routes = [
     {
         path:'/ALL',
         component: ReactIndex,
+        // component: getRouteComponent(import('../App')), //Object
         exact: true,
     },
     {
@@ -64,18 +79,16 @@ const routes = [
 ]
 export default function Routes(){
     return (
-        <div>
-            <Switch>
-                {
-                    routes.map(route => (
-                        <Route  
-                            key={route.path}
-                            path={route.path} 
-                            component={route.component} 
-                        />
-                    ))
-                }
-            </Switch>
-        </div>
+        <Switch>
+            {
+                routes.map(route => (
+                    <Route  
+                        key={route.path}
+                        path={route.path} 
+                        component={route.component} 
+                    />
+                ))
+            }
+        </Switch>
     )
 }

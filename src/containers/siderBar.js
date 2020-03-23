@@ -47,17 +47,15 @@ const SierBarList = [
 
 export default function SiderBar(){
     return (
-        <div>
-            <ul>
-            {
-                SierBarList.map(item => (
-                    <li key={item.title}>
-                        <Link to={item.router}>{item.title}</Link>
-                    </li>
-                ))
-            }
-            </ul>
-        </div>
+        <ul>
+        {
+            SierBarList.map(item => (
+                <li key={item.title}>
+                    <Link to={item.router}>{item.title}</Link>
+                </li>
+            ))
+        }
+        </ul>
     )
 }
 

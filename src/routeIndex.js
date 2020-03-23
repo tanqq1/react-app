@@ -13,7 +13,7 @@ export default function RouterIndex(){
                 <div className="siderBar">
                     <SiderBar />
                 </div>
-                <div className="mainPage">
+                <div className="pageContent">
                     <Routes />
                 </div>
             </div>

@@ -14,16 +14,6 @@ module.exports = {
                 test: /\.js?$/,
                 exclude:/(node_modules|bower_components)/,
                 loader: 'babel-loader',
-                options:{
-                    "presets":[
-                        "@babel/react",
-                        "@babel/env"
-                    ],
-                    "plugins":[
-                        "@babel/proposal-class-properties",
-                        "@babel/syntax-dynamic-import"
-                    ]
-                }
             },
             {
                 test:/\.css$/,

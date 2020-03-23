@@ -10,10 +10,10 @@ body {
 
   .container {
     position: relative;
+    width: 100%;
   }
   .siderBar {
     height:100%;
-    width: 16%;
     min-width: 200px;
     background:rgba(121,121,121,0.3);
     font-size: 18px;
@@ -22,11 +22,12 @@ body {
     top: 20px;
     z-index: 2;
   }
-  .mainPage{
-    margin-left: 20%;
-    width: 80%;
+  .pageContent{
+    margin-left: 210px;
+    width: calc(100% - 210px);
     position: relative;
-    line-break: auto;
+    word-wrap: break;
+    word-break: keep-all;
   }
   
   .board-row:after {
