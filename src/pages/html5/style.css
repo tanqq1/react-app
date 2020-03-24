@@ -43,6 +43,10 @@ border-right: 10px #0099CC solid;
 left: 1px; /*覆盖并错开1px*/
 border-right: 10px #fff solid;
 }
+#divContainer {
+    text-indent: 2em;
+    white-space: pre-wrap;
+}
 /* 
 :root {
     --titleColor: darkGreen;

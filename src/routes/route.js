@@ -9,6 +9,7 @@ import ReactIndex from '../App'
 import CanvasOfHtml5 from '../pages/html5/canvasOfHtml5';
 import DomOfHtml from '../pages/html5/domOfHtml';
 import CssAndHtml5 from '../pages/html5/cssAndHtml5';
+import SvgAndHtml from '../pages/html5/svgAndHtml';
 
 function getRouteComponent(paramC){
 
@@ -74,6 +75,11 @@ const routes = [
     {
         path:'/cssAndHtml5',
         component: CssAndHtml5,
+        exact: false,
+    },
+    {
+        path:'/SvgAndHtml',
+        component: SvgAndHtml,
         exact: false,
     },
 ]

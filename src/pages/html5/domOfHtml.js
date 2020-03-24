@@ -15,7 +15,7 @@ export default function DomOfHtml(){
         <div>
             <h1>DOM操作方法</h1>
             <button onClick={addOlRow}>add a ol li</button>
-            <h3>节点的操作方法</h3>
+            <h3>节点的操作方法s</h3>
             <ol>
                 <li>appendChild</li>
                 <li>removeChild</li>

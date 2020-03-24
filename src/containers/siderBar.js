@@ -42,6 +42,10 @@ const SierBarList = [
         title:'cssAndHtml5',
         router:'/cssAndHtml5'
     },
+    {
+        title:'SVG',
+        router:'/SvgAndHtml'
+    },
 
 ]
 

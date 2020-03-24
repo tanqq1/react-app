@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
     entry:"./src/index.js",
     output:{
-        filename:"bundle.js",
+        filename:"[name].[hash].bundle.js",
         path: path.join(__dirname, "dist"),
     },
     module:{
@@ -27,6 +27,11 @@ module.exports = {
                 test: /\.(png|jpg|gif|ico)$/,
                 exclude: /node_modules/,
                 loader: ['file-loader?name=[name].[ext]']
+            },
+            {
+                test: /\.svg$/,
+                exclude: /node_modules/,
+                loader: 'svg-inline-loader'
             }
         ]
     },
@@ -38,5 +43,13 @@ module.exports = {
             // favicon: path.resolve.apply(path,[__dirname, 'public/favicon.ico','../..'])
         }),
         new CleanWebpackPlugin()
-    ]
+    ],
+    devServer: {
+        allowedHosts:['www.baidu.com'],//添加白名单服务，允许一些开发服务器访问
+        port: '3333',
+        contentBase:path.join(__dirname,'public'),
+        publicPath:'/',
+        watchContentBase: true,
+        hot: true
+    }
 }
