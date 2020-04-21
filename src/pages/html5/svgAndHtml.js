@@ -1,12 +1,39 @@
 import React from 'react';
 import './style.css';
+import '../../index.css';
 import Svg from './demo.svg';
 
 export default function SvgAndHtml(){
+    let timeoutID = null;
+    const c = 2 * Math.PI * 100;
+
+    // animation
+    function getAnimate(){
+        const nodeID = document.getElementById("cir_ani");
+        const radius = nodeID.getAttribute("r")
+        let precent = 1;
+        timeoutID = setInterval(() => {
+            if(precent > c){
+                precent = 0;
+            }
+            ++precent;
+            nodeID.setAttribute("stroke-dasharray", precent, 800)
+        }, 20)
+       
+    }
+
+    function stopAnimate(){
+        if(timeoutID){
+            clearInterval(timeoutID);
+        }
+    }
+
     return (
         <div>
+            <button onClick={getAnimate}>播放动画</button>
+            <button onClick={stopAnimate}>停止动画</button>
+            {/* <button className="gradient-border" onClick={getAnimate}>播放动画</button> */}
             <svg version="1.1" baseProfile="full" width="1000" height="1000" xmlns="http://www.w3.org/2000/svg" zoomAndPan="magnify">
-
                 <defs>
                     <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" style={{stopColor:'#ffff00', stopOpacity:1}} />
@@ -29,7 +56,17 @@ export default function SvgAndHtml(){
                 <text x="170" y="145" fontSize="60" textAnchor="middle" fill="white">SVG</text>
                 {/* circle 圆*/}
                 <circle cx="500" cy="140" r="120" stroke="orange" strokeWidth="2" fill="white" />
-                <circle cx="500" cy="140" r="100" fill="blue" />
+                <circle 
+                    id="cir_ani" 
+                    cx="500" 
+                    cy="140" 
+                    r="100" 
+                    fill="white" 
+                    stroke="pink" 
+                    strokeWidth="20" 
+                    strokeLinecap="round" 
+                    strokeDasharray={`1,${c}`}
+                />
                 <circle cx="500" cy="140" r="80" fill="white" />
                 <text x="460" y="150" fill="red" fontSize="30" strokeWidth="2" stroke="red">circle</text>
                 {/* rect 矩形 */}

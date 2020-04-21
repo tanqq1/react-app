@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 function FancyBorder(props){
     return (
-        <div style={{backgroundColor:'#aaffaa'}}>
+        <div>
             {props.children}
         </div>
     )
@@ -28,9 +28,6 @@ class Dialog extends Component{
         }
     }
 
-    getTime = () =>{
-        console.log("nannnnnnn.......")
-    }
 
     render(){
         return (
