@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require("webpack");
 
 module.exports = {
     entry:"./src/index.js",
@@ -40,8 +41,8 @@ module.exports = {
             template: './public/index.html',
             filename: './index.html',
             favicon: './public/favicon.ico'
-            // favicon: path.resolve.apply(path,[__dirname, 'public/favicon.ico','../..'])
         }),
+        new webpack.HotModuleReplacementPlugin(),
         new CleanWebpackPlugin()
     ],
     devServer: {

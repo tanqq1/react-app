@@ -1,6 +1,6 @@
 import React from 'react';
 import { 
-    BrowserRouter as Router,
+    HashRouter as Router,
     } from 'react-router-dom';
 import SiderBar from './containers/siderBar';
 import Routes from './routes/route';
