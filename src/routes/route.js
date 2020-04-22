@@ -10,6 +10,7 @@ import CanvasOfHtml5 from '../pages/html5/canvasOfHtml5';
 import DomOfHtml from '../pages/html5/domOfHtml';
 import CssAndHtml5 from '../pages/html5/cssAndHtml5';
 import SvgAndHtml from '../pages/html5/svgAndHtml';
+import FunTest from '../pages/function/fun';
 
 // function getRouteComponent(paramC){
 //     return React.lazy(() => import(paramC))
@@ -64,6 +65,11 @@ const routes = [
     {
         path:'/SvgAndHtml',
         component: SvgAndHtml,
+        exact: false,
+    },
+    {
+        path:'/FunTest',
+        component: FunTest,
         exact: false,
     },
 ]
