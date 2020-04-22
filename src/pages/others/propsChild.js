@@ -36,6 +36,11 @@ class Dialog extends Component{
                 text={this.state.text}
             >
                 <input onChange={(e)=>{this.setState({title:e.target.value})}} />
+                <div>
+                   
+
+                    
+                </div>
             </WelcomeDialog>
         )
     }

@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import './style.css';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atelierLakesideDark,  railscasts } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 export default function(){
 
@@ -73,19 +75,14 @@ export default function(){
                 {/* <audio src="audio2.m4a" id="audio2"></audio> */}
                 {/* <a href="audio2.m4a" download="audio2.m4a">是下载的吗</a> */}
             </div>
-            <div className="left"></div>
-
-            <div>
-                <div>来个视频看看</div>
-                <video src=""></video>
-            </div>
+            {/* <div className="left"></div> */}
             <div>
                 address标签的使用
                 <address>
                     <p>联系人：15765582315</p>
                 </address>
             </div>
-            <div className="maiodian">
+            {/* <div className="maiodian">
                 <ul>
                     <li><a href="#mao" id="index">锚点 </a></li>
                     <li><a href="#cssVar" id="index">css 变量 </a></li>
@@ -97,11 +94,12 @@ export default function(){
                     <li><span id="noIndex">webPack </span></li>
                     <li><a href="#chooseCss" id="index">css选择器 </a></li>
                 </ul>
-            </div>
+            </div> */}
             <h4 id="mao">锚点的使用</h4>
             <div id="divContainer">
-                <code>
-                    关于锚点的使用：
+            <SyntaxHighlighter language="javascript" style={atelierLakesideDark}>
+                    {
+                        `关于锚点的使用：
                         1·锚点的设置1：可以通过超链接标签<a></a>的name属性来指定锚点名
                         2·锚点的设置2：可以通过其他标签的id属性来制定锚点名
                         3·如何跳转到锚点名：通过超链接标签<a></a>的href属性来跳转到指定的锚点<a href="#锚点名"></a>
@@ -110,60 +108,62 @@ export default function(){
                     扩展：
                         ***点击某行让改行置浏览器视窗顶部---可以设定锚点与链接在同一个标签上，如：<a href="#self" name="self"></a>
                         ***当存在同名时，id的优先级会大于name,即超链接为相对路径时,浏览器会优先去查找是否存在同名的id属性，如果没有，将会去
-                        查找同名的name属性
-                </code>
+                        查找同名的name属性`
+                    }
+                </SyntaxHighlighter>
             </div>
             <h4 id="cssVar">css变量的使用</h4>
             <div id="divContainer">
-                <code>
                     通过--来定义css 变量,通过 var 来使用变量:css变量同js变量一样，也存在作用域，即定义所在的元素类才能使用，：root
                         相当于js中的全局变量
-                        {/* :root {
+                        <SyntaxHighlighter language="javascript" style={atelierLakesideDark}>
+                            {`:root {
                             --titleColor: darkGreen
                             --px20: 20px;
                             --pColor:darkcyan;
-                        }
-                        h1 {
-                            color: var(--titleColor);
-                            font-size: var(--px20);
-                        } */}
+                            }
+                            h1 {
+                                color: var(--titleColor);
+                                font-size: var(--px20);
+                            }
+                        
     
-                        /////////////////////////////////
-                        在该例中，p只有作为div的子元素 font-size才会生效；因为dSize变量是定义在div元素下的
-                        {/* div {
+                        //在该例中，p只有作为div的子元素 font-size才会生效；因为dSize变量是定义在div元素下的
+                        div {
                             --dColor: blue;
                             --dSize: 18px;
                         }
                         p{
                             color: var(--pColor);
                             font-size: var(--dSize);
-                        } */}
-                        ///////////////////////////////
-                </code>
+                        }
+                        `}
+                        </SyntaxHighlighter>
+
             </div>
             <h4 id="position">定位解析</h4>
             <div id="divContainer">
-                <code>
+            <SyntaxHighlighter language="javascript" style={railscasts}>
                     position ['relative','absolute','fixed','inherit','sticky','static']
-                </code>
+            </SyntaxHighlighter>
             </div>
             <h4 id="cssCounter">css的计数属性</h4>
             <div id="divContainer" style={{float: 'left'}}>
-                <code>
-                    {/* body {
-                        background-color: #f7f7f7;
-                        //初始化计数，默认初始值为0，如果带num则初始值为num,例如OuterItemCount初始值为5
-                        counter-reset: OuterItemCount 5 InnerItemCount  count;   
-                    }
-                    #outerList > li::before {
-                        content: counter(OuterItemCount) '.';
-                        counter-increment: OuterItemCount 2; //这里增量为2
-                    }
-                    #innerList > li::before{
-                        content: counter(InnerItemCount, lower-alpha) '.';
-                        counter-increment: InnerItemCount; //增量，默认为0
-                    } */}
-                </code>
+            <SyntaxHighlighter language="javascript" style={atelierLakesideDark}>
+                {`body {
+                    background-color: #f7f7f7;
+                    //初始化计数，默认初始值为0，如果带num则初始值为num,例如OuterItemCount初始值为5
+                    counter-reset: OuterItemCount 5 InnerItemCount  count;   
+                }
+                #outerList > li::before {
+                    content: counter(OuterItemCount) '.';
+                    counter-increment: OuterItemCount 2; //这里增量为2
+                }
+                #innerList > li::before{
+                    content: counter(InnerItemCount, lower-alpha) '.';
+                    counter-increment: InnerItemCount; //增量，默认为0
+                }`}
+                </SyntaxHighlighter>
             </div>
             <div style={{float: 'left', width: '15%' }}>
                 <ul id="outerList">
@@ -196,31 +196,31 @@ export default function(){
             <h4 id="chooseCss">css选择器</h4>
             <div id="divContainer">
                 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors" target="_blank">查看文档</a>
-                <code>
-                    css选择器的分类：
-                    1、元素选择器
-                    2、类选择器
-                    3、ID选择器
-                    4、通配选择器
-                    5、属性选择器
-                关系选择器
-                    1、相邻兄弟选择器 +  ----> p + span p元素后的span元素  
-                    2、通用兄弟选择器 ~  ----> p ~ span p后的所有同级span元素，无需相邻
-                    3、子选择器 >   ---->p > span 
-                    4、后代选择器 ''
-                </code>
+                <SyntaxHighlighter language="javascript" style={atelierLakesideDark}>
+                {` css选择器的分类：
+                1、元素选择器
+                2、类选择器
+                3、ID选择器
+                4、通配选择器
+                5、属性选择器
+            关系选择器
+                1、相邻兄弟选择器 +  ----> p + span p元素后的span元素  
+                2、通用兄弟选择器 ~  ----> p ~ span p后的所有同级span元素，无需相邻
+                3、子选择器 >   ---->p > span 
+                4、后代选择器 ''`}
+                </SyntaxHighlighter>
                 <span>front</span>
-                <p title="en-p">lallalal</p>
+                <p title="en-p">P文本</p>
                 <span>back</span>
                 <span>second</span>
-                <h5 title="en-h5">难。。。</h5>
+                <h5 title="en-h5">h5文本</h5>
                 <p>
                     <span>span1 ....
                         <span>span2</span>
                     </span>
                     <span>span3</span>
                 </p>
-                <span>span4</span>
+                <span>span4</span>  
             </div>
             <div>
                 <button onClick = {toNewPage}>跳转到新页面啦</button>

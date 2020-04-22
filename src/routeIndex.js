@@ -1,5 +1,5 @@
 import React from 'react';
-import { 
+import {
     HashRouter as Router,
     } from 'react-router-dom';
 import SiderBar from './containers/siderBar';

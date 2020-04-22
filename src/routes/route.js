@@ -11,25 +11,9 @@ import DomOfHtml from '../pages/html5/domOfHtml';
 import CssAndHtml5 from '../pages/html5/cssAndHtml5';
 import SvgAndHtml from '../pages/html5/svgAndHtml';
 
-function getRouteComponent(paramC){
-
-    async function getAsy() {
-        let b = await paramC;
-        console.log("6666666666",b.default, typeof b.default )
-        return b.default;   //function
-
-    }
-    console.log("9999999999999",typeof getAsy())   //Promise
-    function funThen(){
-        return paramC.then(Module => {
-            console.log("111111111",Module.default)
-            return Module.default;   //function
-        })
-    }
-    
-    console.log("33333333", funThen())   //Promise
-}
-
+// function getRouteComponent(paramC){
+//     return React.lazy(() => import(paramC))
+// }
 const routes = [
     {
         path:'/ALL',

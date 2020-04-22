@@ -26,15 +26,16 @@ h3 {
     margin-left: 80px;
 }
 .left{
-    position: absolute;
+    float: left;
+    clear: both;
 }
 .left:before,.left:after{
 position: absolute;
 content: '';
 border-top: 10px transparent dashed;
-border-left: 10px transparent dashed;
+border-left: 10px#ffffff solid;
 border-bottom: 10px transparent dashed;
-border-right: 10px #fff solid;
+border-right: 10px transparent dashed;
 }
 .left:before{
 border-right: 10px #0099CC solid;

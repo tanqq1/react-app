@@ -9,16 +9,21 @@ export default function SvgAndHtml(){
 
     // animation
     function getAnimate(){
+        // 已经在加载动画的话则不再重新加载
+        if(timeoutID) return;
         const nodeID = document.getElementById("cir_ani");
-        const radius = nodeID.getAttribute("r")
+        const textNode = document.getElementById("cir_text");
+        
         let precent = 1;
         timeoutID = setInterval(() => {
             if(precent > c){
                 precent = 0;
             }
             ++precent;
-            nodeID.setAttribute("stroke-dasharray", precent, 800)
-        }, 20)
+            let pp = ((precent / c) * 100).toFixed(0);
+            textNode.innerHTML = pp + '%';
+            nodeID.setAttribute("stroke-dasharray", `${precent},${c}`)
+        }, 50)
        
     }
 
@@ -26,6 +31,7 @@ export default function SvgAndHtml(){
         if(timeoutID){
             clearInterval(timeoutID);
         }
+        timeoutID = null;
     }
 
     return (
@@ -65,10 +71,10 @@ export default function SvgAndHtml(){
                     stroke="pink" 
                     strokeWidth="20" 
                     strokeLinecap="round" 
-                    strokeDasharray={`1,${c}`}
+                    strokeDasharray="1,700"
                 />
                 <circle cx="500" cy="140" r="80" fill="white" />
-                <text x="460" y="150" fill="red" fontSize="30" strokeWidth="2" stroke="red">circle</text>
+                <text  id="cir_text" x="470" y="150" fill="red" fontSize="30" strokeWidth="2" stroke="red">circle</text>
                 {/* rect 矩形 */}
                 <rect x="20" y="400" width="60" height="40" style={{fill:'yellow', stroke:'black', strokeWidth: 2, fillOpacity:0.5, strokeOpacity:0.6, rx:3 }} />
                 <text x="25" y="425" fill="black" fontSize="24">rect</text>

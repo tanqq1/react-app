@@ -40,7 +40,14 @@ class Pages3 extends Component{
     static contextType = ThemeContext;
     render(){
         return (
-        <div style={{...this.context}}>{this.context.color}</div>
+            <div>
+                <div style={{...this.context}}>
+                    {this.context.color}
+                </div>
+                React-Router之BrowerRouter 与 HashRouter,他们都是通过HTML5的history来创建的
+                {`_this.history = history.createBrowserHistory(_this.props)`}
+                {`_this.history = history.createHashHistory(_this.props);`}
+            </div>
         )
     }
 }
