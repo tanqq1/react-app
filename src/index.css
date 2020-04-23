@@ -129,3 +129,21 @@ body {
       background-position: 100% 50%;
     }
   }
+
+  .circle-button{
+    border: 2px olivedrab solid;
+    border-radius: 20%;
+  }
+
+  .b-margin{
+    margin-bottom: 30px;
+    margin-right: 40px;
+    float: left;
+    background-color: #325bcd;
+  }
+  .t-margin{
+    margin-top: 40px;
+    margin-left: 60px;
+    float: left;
+    background-color: #8b288b;
+  }

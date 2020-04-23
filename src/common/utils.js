@@ -22,15 +22,13 @@
 
 
     // 防抖函数，防止短时间内大量请求，在规定时间间隔内再次发起请求的话就继续重新计时
-    export function debounce(fn,wait,...args){
+    export function debounce(fn,wait){
         let timeOut = null;
         return function(){
             let context = this;
             let args = arguments;
             if(timeOut) clearTimeout(timeOut);
             timeOut = setTimeout(() => {
-                console.log("this",this)
-                console.log("context",context)
                 fn.apply(context,args);
             }, wait)
         }
@@ -65,7 +63,6 @@
             }
             if(count === 0) break;
         }
-        console.log("排序后返回的数组",arr)
         return arr;
     }
 
@@ -82,11 +79,57 @@
             arr[i] = arr[minIndex];
             arr[minIndex] = temp;
         }
-        console.log("选择排序返回数组",arr)
         return arr;
     }
 
-    // 手动实现Promise
-
-
     // 手动实现call、apply、bind方法
+    Function.prototype.myCall = function (context) {
+        if(typeof this !== 'function'){
+            throw new TypeError('Error')
+        }
+        context = context || window;
+        context.fn = this;
+        const args = [...arguments].slice(1);
+        const result = context.fn(...args);
+        delete context.fn;
+        return result;
+    }
+
+    Function.prototype.myApply = function (context) {
+        if(typeof this !== 'function'){
+            throw new TypeError("Error")
+        }
+        context = context || window;
+        context.fn = this;
+        const args = arguments[1];
+        const result = context.fn(...args);
+        delete context.fn;
+        return result;
+    }
+
+    Function.prototype.myBind = function (context){
+        if(typeof this !== 'function'){
+            throw new TypeError("Error")
+        }
+        const _this = this;
+        const args = [...arguments].slice(1);
+        return function F(){
+            if(this instanceof F){
+                return new _this(...args,...arguments)
+            }
+            return _this.apply(context, args.concat(...arguments))
+        }
+    }
+
+
+// slice方法
+    String.prototype.mySlice = function(start, end){
+        console.log("start--end", start, end);
+        console.log("传过来的字符串是",this)
+    }
+
+    // 手动实现Promise
+    function myPromise(fn){
+
+    }
+

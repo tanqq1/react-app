@@ -50,6 +50,10 @@ const SierBarList = [
         title:'FunTest',
         router:'/FunTest'
     },
+    {
+        title:'SortPage',
+        router:'/SortPage'
+    },
 
 ]
 
