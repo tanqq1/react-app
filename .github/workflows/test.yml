@@ -16,3 +16,10 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  Anyone-Name:
+    runs-on: ubunntu-lastest
+    steps:
+      - run: echo "aha"
+      - name: custom step Names
+        run: |
+          echo ${{ github.branch }}
