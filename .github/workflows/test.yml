@@ -23,7 +23,7 @@ jobs:
         env:
           super_secret: ${{ secrets.ADMIN_ACOUNT }}
         run: |
-          example-command "$super_secret"
+          echo "$super_secret"
       - run: echo "aha"
       - name: custom step Names
         run: |
