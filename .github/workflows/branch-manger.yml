@@ -1,25 +1,23 @@
-name: Branch Manger
+name: "Branch Manger"
 
 on:
-  create
-  check_run:
-    types:[ completed ]
-  pull_request:
-    branches: [ "tanqq" ]
+  create:
+    description: null
 
 jobs:
-  create:
-    name: Create info for  custom
-    with:
-      lables: Create workflows
-      title: HHHHH
-      body:
-        ### Body
-        - one
-        - two
-        - three
-        ### Name Description
-        - hhhhhhhh
+#   create_issue:
+#     name: Create info for  custom
+#     uses: 
+#     with:
+#       lables: Create workflows
+#       title: HHHHH
+#       body:
+#         ### Body
+#         - one
+#         - two
+#         - three
+#         ### Name Description
+#         - hhhhhhhh
   build:
     runs-on: ubuntu-latest
 
