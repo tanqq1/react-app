@@ -20,13 +20,13 @@ on:
 ######
 
 jobs:
-  Push-Event:
+  Push_Event:
     runs-on: ubuntu-lastest
     if: github.event_name === 'push'
     steps:
       - name: echo_name
         run: echo "this run????"
-      - run: echo "${{jobs.push_event.result}}"
+      - run: echo "${{jobs.Push_Event.result}}"
       - run: echo ${{github.ref_name}}-${{github.event_path}}
   Pull-Request:
     runs-on: ubuntu-latest
