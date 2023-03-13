@@ -6,23 +6,23 @@ on:
       - beta
       - 'release/*'
       - '!release/*-dev'
-    branches-ignores:
+    branches-ignore:
       - 'release/**-test'
   push:
-    path: 
+    paths: 
       - 'src/**'
     paths-ignore:
       - ".github/workflows/**"
 
 ######
-TODO:
-- 打印提交的文件路径列表
-- 是否可以不同trigger event 触发不同的 jobs? 还是必须要只在不同的Action 中处理
-- 执行一个自定义的脚本文件
+# TODO:
+# - 打印提交的文件路径列表
+# - 是否可以不同trigger event 触发不同的 jobs? 还是必须要只在不同的Action 中处理
+# - 执行一个自定义的脚本文件
 ######
 
 jobs:
-  Pull Request
+  Pull-Request:
     runs-on: ubuntu-latest
     steps:
       - name: pull request first steps
