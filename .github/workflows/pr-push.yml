@@ -20,12 +20,23 @@ on:
 ######
 
 jobs:
-  Pull-Request:
+  push_event:
+    if: github.event_name === 'push'
+    runs-on: ubuntu-lastest
+    steps:
+      - name: echo_name
+      - run: echo "${{jobs.push_event.result}}"
+      - run: echo ${{github.ref_name}}-${{github.event_path}}
+    
+  Pull_Request:
+    if: github.event_name === 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: pull request first steps
         run: |
-          echo "all github constants ${{github}}"
-          
+          echo "all github constants ${{github.event_name}}-${{github.ref_type}}"
+          echo ${{github.event_path}}
+  
+  
     
  
