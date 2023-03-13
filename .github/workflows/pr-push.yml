@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: pull request first steps
-        run: |
+      - run: |
           echo "all github constants ${{github.event_name}}-${{github.ref_type}}"
           echo ${{github.event_path}}
   
