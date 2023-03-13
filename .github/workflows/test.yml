@@ -29,7 +29,8 @@ jobs:
         run: >
           echo "${{github.workflow}}-${{github.ref}}-${{github.run_id}}"
           echo ${{github.event_name}}
-      - name: custom workflow config
-        uses: ./.github/workflows/reuse.yml
+  Custom-Reuse
+    runs-on: ubuntu-latest
+    uses: ./.github/workflows/reuse.yml
 
                 
