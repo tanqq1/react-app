@@ -6,8 +6,7 @@ on:
       - beta
       - 'release/*'
       - '!release/*-dev'
-    branches-ignore:
-      - 'release/**-test'
+      - '!release/**-test'
   push:
     paths: 
       - 'src/**'
