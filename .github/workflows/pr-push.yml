@@ -28,14 +28,15 @@ jobs:
       - run: echo "${{jobs.push_event.result}}"
       - run: echo ${{github.ref_name}}-${{github.event_path}}
     
-  Pull_Request:
-    if: github.event_name === 'pull_request'
+  pull_request:
+    if: "${{github.event_name}} === 'pull_request'"
     runs-on: ubuntu-latest
     steps:
       - name: pull request first steps
+        run: "hahhah"
       - run: |
           echo "all github constants ${{github.event_name}}-${{github.ref_type}}"
-          echo ${{github.event_path}}
+          echo  ${{github.event_path}}
   
   
     
