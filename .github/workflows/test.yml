@@ -27,6 +27,6 @@ jobs:
       - run: echo "aha"
       - name: custom step Names
         run: >
-          echo "hhhhhhhhh"
+          echo "get all  github objects ${{github[*]}}"
         
                 
