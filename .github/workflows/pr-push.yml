@@ -25,19 +25,19 @@ jobs:
     if: ${{github.event_name}} == 'push'
     steps:
       - name: push event step name
-        run: echo 'oooooo'
-      - run: echo ${{github.ref_name}}-${{github.event_path}}
+        run:  echo 'oooooo'
+      - run:  echo ${{github.ref_name}}-${{github.event_path}}
   Pull-Request:
     runs-on: ubuntu-latest
     if: ${{github.event_name}} == 'pull_request'
     steps:
       - name: pull request step name
-        run: echo "aha????"
-      #  uses: "./.github/actions/first_action.js"
+        run:  echo "aha????"
+      # uses: "./.github/actions/first_action.js"
       - run: |
           echo "all github constants ${{github.event_name}}-${{github.ref_type}}"
           echo  ${{github.event_path}}
-  
+          echo "### Happy Ending :rocket:"
   
     
  
