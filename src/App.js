@@ -70,7 +70,7 @@ import Game from './pages/game/index';
     render() {
         return (
             <div>
-                <div> add new row</div>
+                <div> add  row</div>
                 <div className="title-div">
                     <span className="gradient-h1">0、三子棋盘</span>
                 </div>
