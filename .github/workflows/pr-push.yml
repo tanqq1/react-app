@@ -32,8 +32,8 @@ jobs:
     if: github.event_name === 'push'
     runs-on: ubuntu-lastest
     steps:
-      - name: echo_name
-        run: echo "${{jobs.push_event.result}}"
+   #   - name: echo_name
+   #     run: echo "${{jobs.push_event.result}}"
       - run: echo ${{github.ref_name}}-${{github.event_path}}
     
   Pull_Request:
