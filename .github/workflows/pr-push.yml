@@ -1,5 +1,5 @@
 name: Branch Flow Listener
-run-name: ${{github.actor}} DO ACTION WITH ${{github.action}}
+run-name: ${{github.actor}} ${{github.event_name}}
 on:
   pull_request:
     branches:
@@ -32,7 +32,8 @@ jobs:
     if: ${{github.event_name}} == 'pull_request'
     steps:
       - name: pull request step name
-        run: echo "sosoososo"
+        run: echo "aha????"
+      #  uses: "./.github/actions/first_action.js"
       - run: |
           echo "all github constants ${{github.event_name}}-${{github.ref_type}}"
           echo  ${{github.event_path}}
