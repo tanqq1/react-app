@@ -27,6 +27,6 @@ jobs:
       - run: echo "aha"
       - name: custom step Names
         run: >
-          echo "get all  github objects ${{github[*]}}"
+          echo "${{github.workflow}}-${{github.ref}}-${{github.run_id}}"
         
                 
