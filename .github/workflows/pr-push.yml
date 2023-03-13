@@ -25,6 +25,7 @@ jobs:
     if: github.event_name === 'push'
     steps:
       - name: echo_name
+        run: echo "this run????"
       - run: echo "${{jobs.push_event.result}}"
       - run: echo ${{github.ref_name}}-${{github.event_path}}
   Pull-Request:
