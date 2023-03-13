@@ -28,5 +28,6 @@ jobs:
       - name: custom step Names
         run: >
           echo "${{github.workflow}}-${{github.ref}}-${{github.run_id}}"
+          echo ${{github.action}}
         
                 
