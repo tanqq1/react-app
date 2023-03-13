@@ -26,5 +26,13 @@ jobs:
           echo "$super_secret"
       - run: echo "aha"
       - name: custom step Names
-        run: |
-          echo "then branch is ${{ github.branch }}"
+        run: >
+          echo ? |
+            this is a key
+            that has multiple lines
+            : this is a value
+          echo ? 
+            - item one
+            - item two
+            :  [202000, 390222]
+                
