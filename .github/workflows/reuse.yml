@@ -1,0 +1,19 @@
+name: Custom Reuse Confignation
+on: 
+  workflow_call:
+    inputs:
+      config-path: 
+        required: true
+        type: string
+      secrets:
+        envPAT:
+          required: true
+jobs:
+  reuse_jobs_first_step:
+    runs-on: ubuntu-latest
+    environment: production  
+    steps:
+      - uses: actions/labeler@v4
+        with:
+          repo-token: ${{ secrets.envPAT}}
+          configration-path: ${{inputs.config-path}}

@@ -1,6 +1,14 @@
 name: Branch Flow Listener
 run-name: ${{github.actor}} DO ACTION WITH ${{github.action}}
 on:
+  workflow_call:
+      inputs:
+        config-path:
+          required: true
+          type: string
+      secrets:
+        envPAT:
+          required: true
   pull_request:
     branches:
       - beta
@@ -25,7 +33,7 @@ jobs:
     runs-on: ubuntu-lastest
     steps:
       - name: echo_name
-      - run: echo "${{jobs.push_event.result}}"
+        run: echo "${{jobs.push_event.result}}"
       - run: echo ${{github.ref_name}}-${{github.event_path}}
     
   Pull_Request:
@@ -33,6 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: pull request first steps
+        run: echo "### aHa :rocket:"
       - run: |
           echo "all github constants ${{github.event_name}}-${{github.ref_type}}"
           echo ${{github.event_path}}
