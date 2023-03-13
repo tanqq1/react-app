@@ -1,5 +1,5 @@
 name: Branch Flow Listener
-run-name: ${{github.actor}} DO ACTION WITH ${{github.action}}
+run-name: ${{github.actor}} ${{github.event_name}}
 on:
   workflow_call:
       inputs:
@@ -28,24 +28,24 @@ on:
 ######
 
 jobs:
-  push_event:
-    if: github.event_name === 'push'
+  Push_Event:
     runs-on: ubuntu-lastest
+    if: ${{github.event_name}} == 'push'
     steps:
-      - name: echo_name
-        run: echo "${{jobs.push_event.result}}"
-      - run: echo ${{github.ref_name}}-${{github.event_path}}
-    
-  Pull_Request:
-    if: github.event_name === 'pull_request'
+      - name: push event step name
+        run:  echo 'oooooo'
+      - run:  echo ${{github.ref_name}}-${{github.event_path}}
+  Pull-Request:
     runs-on: ubuntu-latest
+    if: ${{github.event_name}} == 'pull_request'
     steps:
       - name: pull request first steps
         run: echo "### aHa :rocket:"
+
       - run: |
           echo "all github constants ${{github.event_name}}-${{github.ref_type}}"
-          echo ${{github.event_path}}
-  
+          echo  ${{github.event_path}}
+          echo "### Happy Ending :rocket:"
   
     
  
