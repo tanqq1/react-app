@@ -20,17 +20,16 @@ on:
 ######
 
 jobs:
-  push_event:
-    if: github.event_name === 'push'
+  Push-Event:
     runs-on: ubuntu-lastest
+    if: github.event_name === 'push'
     steps:
       - name: echo_name
       - run: echo "${{jobs.push_event.result}}"
       - run: echo ${{github.ref_name}}-${{github.event_path}}
-    
-  pull_request:
-    if: "${{github.event_name}} === 'pull_request'"
+  Pull-Request:
     runs-on: ubuntu-latest
+    if: "${{github.event_name}} === 'pull_request'"
     steps:
       - name: pull request first steps
         run: "hahhah"
