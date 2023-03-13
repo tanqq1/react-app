@@ -31,3 +31,5 @@ jobs:
           echo ${{github.event_name}}
   Custom-Reuse:
     uses: ./.github/workflows/reuse.yml
+    with:
+      config-path: '/hersb/actions'
