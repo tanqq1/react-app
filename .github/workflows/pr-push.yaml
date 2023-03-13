@@ -1,0 +1,33 @@
+name: Branch Flow Listener
+run-name: ${{github.actor}} DO ACTION WITH ${{github.action}}
+on:
+  pull_request:
+    branches:
+      - beta
+      - 'release/*'
+      - '!release/*-dev'
+    branches-ignores:
+      - 'release/**-test'
+  push:
+    path: 
+      - 'src/**'
+    paths-ignore:
+      - ".github/workflows/**"
+
+######
+TODO:
+- 打印提交的文件路径列表
+- 是否可以不同trigger event 触发不同的 jobs? 还是必须要只在不同的Action 中处理
+- 执行一个自定义的脚本文件
+######
+
+jobs:
+  Pull Request
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull request first steps
+        run: |
+          echo "all github constants ${{github}}"
+          
+    
+ 
