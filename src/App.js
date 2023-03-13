@@ -70,7 +70,7 @@ import Game from './pages/game/index';
     render() {
         return (
             <div>
-                <div>add a new row to github action</div>
+                <div>del a new row to github action</div>
                 <div className="title-div">
                     <span className="gradient-h1">0、三子棋盘</span>
                 </div>
