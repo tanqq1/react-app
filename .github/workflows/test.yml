@@ -31,4 +31,5 @@ jobs:
           echo ${{github.event_name}}
   Custom-Reuse:
     runs-on: ubuntu-latest
-    uses: ./.github/workflows/reuse.yml
+    steps:
+      - uses: ./.github/workflows/reuse.yml
