@@ -7,7 +7,7 @@ on:
         type: string
       secrets:
         envPAT:
-          required: true
+          required: false
 jobs:
   reuse_jobs_first_step:
     runs-on: ubuntu-latest
