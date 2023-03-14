@@ -6,7 +6,7 @@ on:
         required: true
         type: string
       secrets:
-        envPAT:
+        ADMIN_ACOUNT:
           required: false
 jobs:
   reuse_jobs_first_step:
@@ -15,5 +15,5 @@ jobs:
     steps:
       - uses: actions/labeler@v4
         with:
-          repo-token: ${{ secrets.envPAT}}
+          repo-token: ${{ secrets.ADMIN_ACOUNT}}
           configration-path: ${{inputs.config-path}}

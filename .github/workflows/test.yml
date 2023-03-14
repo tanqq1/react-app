@@ -31,5 +31,7 @@ jobs:
           echo ${{github.event_name}}
   Custom-Reuse:
     uses: ./.github/workflows/reuse.yml
+    secrets:
+      envPAT: ${{ secrets.ADMIN_ACOUNT}}
     with:
       config-path: '/hersb/actions'
