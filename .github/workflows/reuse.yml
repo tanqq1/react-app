@@ -5,9 +5,9 @@ on:
       config-path: 
         required: true
         type: string
-      secrets:
-        ADMIN_ACOUNT:
-          required: false
+      # secrets:
+      #   ADMIN_ACOUNT:
+      #     required: false
 jobs:
   reuse_jobs_first_step:
     runs-on: ubuntu-latest
@@ -15,5 +15,5 @@ jobs:
     steps:
       - uses: actions/labeler@v4
         with:
-          repo-token: ${{ secrets.ADMIN_ACOUNT}}
+          # repo-token: ${{ secrets.ADMIN_ACOUNT}}
           configration-path: ${{inputs.config-path}}
