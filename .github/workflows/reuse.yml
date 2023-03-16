@@ -11,17 +11,14 @@ on:
     outputs:
       firstword:
         description: "The first output string"
-        value: ${{ jobs.example_job.outputs.output1 }}
+        value: ${{ jobs.outputs_called.outputs.output1 }}
       secondword:
         description: "The second output string"
-        value: ${{ jobs.example_job.outputs.output2 }}
+        value: ${{ jobs.outputs_called.outputs.output2 }}
 jobs:
   reuse_jobs_first_step:
     runs-on: ubuntu-latest
     environment: production  
-    outputs:
-      output1: ${{ steps.step1.outputs.firstword }}
-      output2: ${{ steps.step2.outputs.secondword }}
     steps:
       - uses: actions/labeler@v4
         with:
@@ -29,6 +26,9 @@ jobs:
           configuration-path: ${{inputs.config-path}}
   outputs_called:
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.step1.outputs.firstword }}
+      output2: ${{ steps.step2.outputs.secondword }}
     steps:
       - id: step1
         run: echo "firstword=hello" >> $GITHUB_OUTPUT
