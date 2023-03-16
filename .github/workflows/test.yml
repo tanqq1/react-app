@@ -34,3 +34,9 @@ jobs:
     secrets: inherit
     with:
       config-path: "/hersb/actions"
+  use_outputs:
+    runs-on: ubuntu-lasest
+    needs: Custom-Reuse
+    steps:
+      - run: echo ${{needs.Custom-Reuse.outputs.firstword}} ${{needs.Custom-Reuse.outputs.secondWord}}
+

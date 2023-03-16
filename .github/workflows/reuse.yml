@@ -5,15 +5,29 @@ on:
       config-path: 
         required: true
         type: string
-      secrets:
-        ADMIN_ACOUNT:
-          required: true
+      # secrets:
+      #   ADMIN_ACOUNT:
+      #     required: true
+    outputs:
+      firstword:
+        description: "The first output string"
+        value: ${{ jobs.example_job.outputs.output1 }}
+      secondword:
+        description: "The second output string"
+        value: ${{ jobs.example_job.outputs.output2 }}
 jobs:
   reuse_jobs_first_step:
     runs-on: ubuntu-latest
     environment: production  
+    outputs:
+      output1: ${{ steps.step1.outputs.firstword }}
+      output2: ${{ steps.step2.outputs.secondword }}
     steps:
       - uses: actions/labeler@v4
         with:
-          repo-token: ${{ secrets.ADMIN_ACOUNT}}
+          # repo-token: ${{ secrets.ADMIN_ACOUNT}}
           configuration-path: ${{inputs.config-path}}
+       - id: step1
+         run: echo "firstword=hello" >> $GITHUB_OUTPUT
+       - id: step2
+         run: echo "secondword=world" >> $GITHUB_OUTPUT
