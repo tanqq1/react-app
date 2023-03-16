@@ -27,7 +27,7 @@ jobs:
         with:
           # repo-token: ${{ secrets.ADMIN_ACOUNT}}
           configuration-path: ${{inputs.config-path}}
-       - id: step1
-         run: echo "firstword=hello" >> $GITHUB_OUTPUT
-       - id: step2
-         run: echo "secondword=world" >> $GITHUB_OUTPUT
+      - id: step1
+        run: echo "firstword=hello" >> $GITHUB_OUTPUT
+      - id: step2
+        run: echo "secondword=world" >> $GITHUB_OUTPUT
