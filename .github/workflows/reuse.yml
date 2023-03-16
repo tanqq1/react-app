@@ -1,0 +1,36 @@
+name: Custom Reuse Confignation
+on: 
+  workflow_call:
+    inputs:
+      config-path: 
+        required: true
+        type: string
+      # secrets:
+      #   ADMIN_ACOUNT:
+      #     required: true
+    outputs:
+      firstword:
+        description: "The first output string"
+        value: ${{ jobs.outputs_called.outputs.output1 }}
+      secondword:
+        description: "The second output string"
+        value: ${{ jobs.outputs_called.outputs.output2 }}
+jobs:
+  reuse_jobs_first_step:
+    runs-on: ubuntu-latest
+    environment: production  
+    steps:
+      - uses: actions/labeler@v4
+        with:
+          # repo-token: ${{ secrets.ADMIN_ACOUNT}}
+          configuration-path: ${{inputs.config-path}}
+  outputs_called:
+    runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.step1.outputs.firstword }}
+      output2: ${{ steps.step2.outputs.secondword }}
+    steps:
+      - id: step1
+        run: echo "firstword=hello" >> $GITHUB_OUTPUT
+      - id: step2
+        run: echo "secondword=world" >> $GITHUB_OUTPUT
