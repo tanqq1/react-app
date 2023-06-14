@@ -1,10 +1,7 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import RouterIndex from "./routeIndex";
+import "./common/clickCanvas";
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import RouterIndex from './routeIndex';
-  
-  ReactDOM.render(
-    <RouterIndex />,
-    document.getElementById('root')
-  );
+ReactDOM.render(<RouterIndex />, document.getElementById("root"));

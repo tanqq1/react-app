@@ -1,149 +1,151 @@
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
-    --border-width:3px;
-  }
-  
-  ol, ul {
-    padding-left: 30px;
-  }
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+  --border-width: 3px;
+}
 
-  .container {
-    position: relative;
-    width: 100%;
-  }
-  .siderBar {
-    height:100%;
-    min-width: 200px;
-    background:rgba(121,121,121,0.3);
-    font-size: 18px;
-    color: white;
-    position:fixed;
-    top: 20px;
-    z-index: 2;
-  }
-  .pageContent{
-    margin-left: 210px;
-    width: calc(100% - 210px);
-    position: relative;
-    word-wrap: break;
-    word-break: keep-all;
-  }
-  
-  .board-row:after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-  
-  .status {
-    margin-bottom: 10px;
-  }
-  
-  .square {
-    background: #fff;
-    border: 1px solid #999;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 34px;
-  }
-  
-  .square:focus {
-    outline: none;
-  }
-  
-  .kbd-navigation .square:focus {
-    background: #ddd;
-  }
-  
-  .game {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .game-info {
-    margin-left: 20px;
-  }
-  h1 {
-    color:'blue'
-  }
-  .hooksTitle{
-    color:#8b288b;
-    font-size:16px;
-  }
-  .title-div{
-    margin:15px;
-  }
-  /* 渐变色的两种实现方式 background-image//mask */
-  .gradient-h1{
-    background-image: linear-gradient(to right, pink, red, cyan);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color:transparent;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  .gradient-mask{
-    position: relative;
-    color: #325bcd;
-  }
-  .gradient-mask::before{
-    content: attr(text);
-    position: absolute;
-    z-index:10;
-    color:pink;
-    mask:linear-gradient(to left, #bc32cd, transparent);
-    -webkit-mask:linear-gradient(to left, #bc32cd, transparent);
-  }
+ol,
+ul {
+  padding-left: 30px;
+}
 
-  
-  input{
-    display:inline-block;
-  }
+.container {
+  position: relative;
+  width: 100%;
+}
+.siderBar {
+  height: 100%;
+  min-width: 200px;
+  background: rgba(218, 148, 20, 0.3);
+  font-size: 18px;
+  color: white;
+  position: fixed;
+  top: 20px;
+  z-index: 2;
+  box-shadow: #999 1px inset;
+  color: green;
+}
+.pageContent {
+  margin-left: 210px;
+  width: calc(100% - 210px);
+  position: relative;
+  word-wrap: break;
+  word-break: keep-all;
+}
 
-  .gradient-border{
-    border:3px salmon solid;
-    border-radius: var(--border-width);
-    background:linear-gradient(
-      60deg,
-      hsl(224, 85%, 66%),
-      hsl(269, 85%, 66%),
-      hsl(314, 85%, 66%),
-      hsl(359, 85%, 66%),
-      hsl(44, 85%, 66%),
-      hsl(89, 85%, 66%),
-      hsl(134, 85%, 66%),
-      hsl(179, 85%, 66%)
-    );
-    /* animation: moveGradient 4s alternate infinite; */
-  }
-  @keyframes moveGradient {
-    50% {
-      background-position: 100% 50%;
-    }
-  }
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
 
-  .circle-button{
-    border: 2px olivedrab solid;
-    border-radius: 20%;
-  }
+.status {
+  margin-bottom: 10px;
+}
 
-  .b-margin{
-    margin-bottom: 30px;
-    margin-right: 40px;
-    float: left;
-    background-color: #325bcd;
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+h1 {
+  color: "blue";
+}
+.hooksTitle {
+  color: #8b288b;
+  font-size: 16px;
+}
+.title-div {
+  margin: 15px;
+}
+/* 渐变色的两种实现方式 background-image//mask */
+.gradient-h1 {
+  background-image: linear-gradient(to right, pink, red, cyan);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 20px;
+  font-weight: bold;
+}
+.gradient-mask {
+  position: relative;
+  color: #325bcd;
+}
+.gradient-mask::before {
+  content: attr(text);
+  position: absolute;
+  z-index: 10;
+  color: pink;
+  mask: linear-gradient(to left, #bc32cd, transparent);
+  -webkit-mask: linear-gradient(to left, #bc32cd, transparent);
+}
+
+input {
+  display: inline-block;
+}
+
+.gradient-border {
+  border: 3px salmon solid;
+  border-radius: var(--border-width);
+  background: linear-gradient(
+    60deg,
+    hsl(224, 85%, 66%),
+    hsl(269, 85%, 66%),
+    hsl(314, 85%, 66%),
+    hsl(359, 85%, 66%),
+    hsl(44, 85%, 66%),
+    hsl(89, 85%, 66%),
+    hsl(134, 85%, 66%),
+    hsl(179, 85%, 66%)
+  );
+  /* animation: moveGradient 4s alternate infinite; */
+}
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
   }
-  .t-margin{
-    margin-top: 40px;
-    margin-left: 60px;
-    float: left;
-    background-color: #8b288b;
-  }
+}
+
+.circle-button {
+  border: 2px olivedrab solid;
+  border-radius: 20%;
+}
+
+.b-margin {
+  margin-bottom: 30px;
+  margin-right: 40px;
+  float: left;
+  background-color: #325bcd;
+}
+.t-margin {
+  margin-top: 40px;
+  margin-left: 60px;
+  float: left;
+  background-color: #8b288b;
+}

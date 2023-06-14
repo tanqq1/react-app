@@ -1,0 +1,41 @@
+h2.linear {
+  background: linear-gradient(
+    to right,
+    green 5%,
+    orange 10%,
+    pink 12%,
+    rgb(90, 90, 211) 24%
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+h2 {
+  position: relative;
+  color: rgb(255, 0, 0);
+}
+
+h2:before {
+  content: attr(text);
+  position: absolute;
+  z-index: 10;
+  color: rgb(138, 180, 138);
+  -webkit-mask: linear-gradient(to right, red 20%, transparent);
+}
+
+.mask {
+  width: 200px;
+  height: 150px;
+  background-size: contain;
+  /* background-image: url(./me.jpg); */
+  -webkit-mask-image: linear-gradient(blue, transparent);
+  margin-bottom: 30px;
+}
+
+pre {
+  background-color: rgb(204, 204, 181);
+}
+
+pre > code {
+  line-height: 1.5;
+}
